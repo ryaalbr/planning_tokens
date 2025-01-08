@@ -1,6 +1,6 @@
 DATASET=gsm8k
 MODE=supervised
-MODEL=meta-llama/Llama-2-7b-hf
+MODEL=openlm-research/open_llama_7b_v2
 ADD_SOFT_PROMPT=True
 N_PREFIX=6
 N_SPECIAL=0
