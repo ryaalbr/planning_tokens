@@ -132,7 +132,7 @@ def extract_step_type(dataset_name:str, model_name_or_path:str, batch_size:int,
 
             else:
                 embedding_model = transformers.AutoModelForCausalLM.from_pretrained(
-                    model_name_or_path, cache_dir=cache_dir).to('cuda')
+                    model_name_or_path, cache_dir=cache_dir, device_map = 'cuda')
                 
                 if 'phi-1' in model_name_or_path:
                     # monkey patching to add output hidden states
