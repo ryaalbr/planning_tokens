@@ -344,7 +344,7 @@ def extract_step_type(dataset_name:str, model_name_or_path:str, batch_size:int,
         tsne_file = f"{output_dir}/{selection_method}/{dataset_name}/{dataset_name}_{selection_method}_tsne.npy"
 
         if os.path.isfile(tsne_file):
-            X = np.load(tsne_file)
+            X = np.load(tsne_file, allow_pickle=True)
         else:
             X = TSNE(n_components=2, learning_rate='auto',
                             init='random', perplexity=3).fit_transform(np.concatenate(step_embeddings))
